@@ -1,7 +1,7 @@
 //Noise Stripes
 //Turbulence = "shakiness"
 float power = 32;  //Turbulence Power
-float d = 64; //Turbulence Density
+float d = 128; //Turbulence Density
 void keyPressed()
 {
   if ( key == 's')
