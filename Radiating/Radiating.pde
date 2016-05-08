@@ -1,13 +1,12 @@
 int c = 255;
 
 void setup() {
-  size(1600, 1600);
+  size(2048, 2048);
   noStroke();
   loop();
   smooth(8);
   displayDensity(1);
   pixelDensity(2);
-
 }
 void keyPressed() { 
   if (key == 'g') {
@@ -18,7 +17,7 @@ void keyPressed() {
 
 void draw() {
   background(0);
-  int nTiles = 10;
+  int nTiles = 8;
   float s = width / (float) nTiles;
   translate(s/2, s/2);
 
@@ -43,7 +42,7 @@ void cic(float radius, float rSub, float angle, float aAdd) {
     fill(c);
     c = 255 - c;
     polygon(0, 0, radius, 5);
-    radius -= +(log(log(log(rSub))));
+    radius -= log(log(log(rSub)));
     angle += (aAdd);
     float r = (rSub);
     float x = cos(angle + aAdd) * r;
@@ -57,8 +56,8 @@ void polygon(float x, float y, float radius, int npoints) {
   float angle = TWO_PI / npoints;
   beginShape();
   for (float a = 0; a < TWO_PI; a += angle) {
-    float sx = x + tan(a) * radius;
-    float sy = y + atan(a) * radius;
+    float sx = x + atan(a) * radius;
+    float sy = y + tan(a) * radius;
     vertex(sx, sy);
   }
   endShape(CLOSE);
